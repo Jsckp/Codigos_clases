@@ -2,7 +2,7 @@
 #include <math.h>
 
 int main() {
-    float monto, anoscredito;
+    float monto, interes,interesporcentual,  anoscredito;
     float cuotames, tasainteresdiaria,tasainteresmes, cuota_interes, total_interes, total_a_pagar, total_a_pagar_anual, total_a_pagar_total,  tasa_anual; 
 
     printf("Ingrese el monto:\n");
@@ -11,7 +11,11 @@ int main() {
     printf("Ingrese a cuantos años quiere el credito:\n");
     scanf("%f", &anoscredito);
 
-    tasainteresmes = 0.15 / 12;
+    printf ("Ingrese el valor del interes:");
+    scanf ("%f", &interes);
+
+    interesporcentual = interes/100 ;
+    tasainteresmes = interesporcentual / 12;
     tasa_anual = tasainteresmes * 12;
 
 
@@ -32,6 +36,8 @@ int main() {
         total_a_pagar_total = total_a_pagar_total + total_a_pagar_anual;
         printf("El total a pagar en todos los años es: %.2f\n", total_a_pagar_total);
     }
+
+    
 
     return 0;
 }
